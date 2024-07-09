@@ -60,7 +60,10 @@ export default{
         <div>
             <ul v-for="(task,index) of tasks" :key="index" class="flex gap-5 justify-between items-center text-center p-5">
                 <div class="bg-black rounded-full text-orange-500 flex gap-20 justify-between items-center w-full p-5">
-                    <p class="text-black" :class="{'high' : task.priority === 'high', 'medium' : task.priority === 'medium', 'low' : task.priority === 'low'}"></p>
+                    <div class="flex gap-2 items-center">
+                        <p class="text-black" :class="{'high' : task.priority === 'high', 'medium' : task.priority === 'medium', 'low' : task.priority === 'low'}"></p>
+                        <span class="text-white">{{ task.priority }}</span>
+                    </div>
                     <p class="font-bold">{{ task.description }}</p>
                     <div class="gap-5 flex">
                         <button @click="deleteTask(index)" class="bg-red-500 p-2 text-white rounded-full">Delete task</button>
